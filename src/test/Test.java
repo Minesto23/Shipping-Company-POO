@@ -1,5 +1,10 @@
-package test;
+/**
+ *	Made by : Miguel Ernesto Morales Molina
+ *	Matriculation number : 15590763
+ * 
+ **/
 
+package test;
 
 import java.util.Scanner;
 
@@ -72,10 +77,8 @@ public class Test {
 			default:
 				do {
 					System.out.println("Please select a valid option.");
-					System.out.println("Do you want to return to the previous menu? Y/N");
-					option = menuScan.next().toUpperCase().charAt(0);
+					menu();
 				}while(option == 'N');
-				menu();
 				break;
 		}
 		

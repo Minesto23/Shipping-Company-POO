@@ -1,3 +1,9 @@
+/**
+ *	Made by : Miguel Ernesto Morales Molina
+ *	Matriculation number : 15590763
+ * 
+ **/
+
 package containers;
 
 public class BigContainer extends Container{

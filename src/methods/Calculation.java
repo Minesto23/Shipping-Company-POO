@@ -1,3 +1,9 @@
+/**
+ *	Made by : Miguel Ernesto Morales Molina
+ *	Matriculation number : 15590763
+ * 
+ **/
+
 package methods;
 
 import java.util.ArrayList;
@@ -10,7 +16,7 @@ import items.*;
 
 public class Calculation {
 	
-	private ArrayList<Item> order = new ArrayList<Item>();
+	private ArrayList<Item> order = new ArrayList<Item>(); // arraylist to store the order
 	
 	public Calculation() {
 	}
@@ -18,33 +24,35 @@ public class Calculation {
 	
 	//methods
 	
+	// methods to add items to the order arraylist
 	public void add_item(Item item) {
 		this.order.add(item);
 	}
 	
+	// method to create the order to calculate shipping price
 	public void add_order() {
 		
 		Scanner orderScan = new Scanner(System.in);
-		int boxtype;
+		char boxtype;
 		char add_other;
 		
 		do {
-			System.out.println("Please select the box type of your item\n(1) Cube Box  (2) Rentangule Box "+
-						"(3) Cylinder Box (4) Pentagon Box");
-			boxtype=orderScan.nextInt();
+			System.out.println("Please select the box type of your item\n(A) Cube Box  (B) Rentangule Box "+
+						"(C) Cylinder Box (D) Pentagon Box");
+			boxtype=orderScan.next().toUpperCase().charAt(0);
 		
 			switch (boxtype) {
 		
-				case 1:
+				case 'A':
 					add_item(new CubeItem());
 					break;
-				case 2:
+				case 'B':
 					add_item(new RectanguleItem());
 					break;
-				case 3:
+				case 'C':
 					add_item(new CylinderItem());
 					break;
-				case 4:
+				case 'D':
 					add_item(new PentagonItem());
 					break;
 
@@ -60,6 +68,7 @@ public class Calculation {
 		
 	}
 	
+	// method to print the information about the order
 	public void printOrderInformation() {
 		
 		
@@ -87,6 +96,7 @@ public class Calculation {
 		}
 	}
 	
+	// method to print information about a define item
 	public void printItemInformation() {
 		
 		char search_other;
@@ -105,6 +115,7 @@ public class Calculation {
 		
 	}
 	
+	//method to calculate the total volume
 	public double total_volume(ArrayList<Item> order) {
 		
 		double total_volume=0;
@@ -116,6 +127,7 @@ public class Calculation {
 		return total_volume;
 	}
 	
+	// method to calculate the total weight
 	public double total_weight(ArrayList<Item> order) {
 		
 		double total_weight=0;
@@ -127,6 +139,7 @@ public class Calculation {
 		return total_weight;
 	}
 	
+	// method to calculate the price to pay for the shipping
 	public int shipping_price(BigContainer bigcontainer, SmallContainer smallcontainer) {
 		
 		int shipping_price =0;
@@ -136,6 +149,7 @@ public class Calculation {
 		return shipping_price;
 	}
 
+	// method core of the app than calculate the best choice to shipping the items
 	public void best_shipping() {
 		
 		BigContainer bigcontainer = new BigContainer();
