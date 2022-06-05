@@ -3,6 +3,10 @@
  *	Matriculation number : 15590763
  * 
  **/
+
+/* I only use one ArrayList to the order because I did inheritance with the shape of the item,
+ * like I told you in class and you tell than is not problem use only one ArrayList.
+*/
 package items;
 
 import java.util.Scanner;
